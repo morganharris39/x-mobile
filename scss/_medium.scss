@@ -17,9 +17,14 @@ header {
     box-shadow: none;
     li a {
         padding: 0.4rem 1rem;
+        background-color: $blackColor;
+    }
+    li.active a {
+        color: $purpleColor;
+        background-color: $blackColor;
     }
     a:hover {
-        text-decoration: underline 4px $accentColor;
+        text-decoration: underline 4px $purpleColor;
     }
 } // end ul
 

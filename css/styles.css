@@ -314,34 +314,42 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-  font-family: "Spline Sans", sans-serif;
-  font-weight: 300;
   min-width: 320px;
+}
+
+.afacad-400 {
+  font-family: "Afacad", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.afacad-700 {
+  font-family: "Afacad", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {
-  border-bottom: 1px solid #ccc;
+  background-color: #000000;
 }
 
 header {
-  display: grid;
-  grid-template-columns: 50px auto 44px;
+  display: flex;
+  justify-content: space-between;
   -moz-column-gap: 10px;
        column-gap: 10px;
   align-items: center;
-  padding: 0.5rem 10px;
-}
-header span {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: #1d295f;
+  padding: 1.5rem 10px;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #primaryNav button::before {
   content: "☰";
   font-weight: 600;
+  color: #E22F65;
 }
 
 #primaryNav button {
@@ -358,31 +366,29 @@ header span {
   position: absolute;
   right: 10px;
   width: 200px;
-  background-color: pink;
+  background-color: #111111;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border: 1px solid purple;
   border-radius: 5px;
-  box-shadow: 0 0 10px #aaa;
   text-align: right;
   display: none;
 }
 #primaryNav ul li a {
-  color: #1d295f;
+  color: #E22F65;
   display: block;
   padding: 0.75rem 10px;
   text-decoration: none;
 }
 #primaryNav ul li.active a {
-  background-color: #7c1d47;
-  color: lightpink;
-  font-weight: 500;
+  background-color: #D029DA;
+  color: #000000;
 }
 
 #primaryNav button.open::before {
   content: "✕";
   font-weight: 600;
+  color: #E22F65;
 }
 
 #primaryNav ul.open {
@@ -391,10 +397,14 @@ header span {
 
 /* --------------------------- MAIN --------------------------- */
 main h1 {
-  padding: 1rem 10px 0.5rem 10px;
+  font-size: 2rem;
+}
+main h2 {
   font-size: 1.5rem;
-  color: #7c1d47;
-  font-weight: 300;
+}
+main h1, main h2 {
+  padding: 1rem 10px 0.5rem 10px;
+  color: #000000;
 }
 main p {
   padding: 0.5rem 10px;
@@ -411,31 +421,22 @@ main img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 1rem 0;
-  padding: 0 8px;
-  border: 1px solid green;
+  margin: 0.5rem 0;
 }
 
 .column {
   padding: 0 8px;
   margin: 8px 0;
-  border: 1px solid purple;
 }
 
-.line {
-  border: 1px solid orange;
+.colorSection {
+  background-color: #F1A400;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 
-.round {
-  border-radius: 10px;
-}
-
-.fill {
-  background-color: lightcoral;
-}
-
-.shadow {
-  box-shadow: 0 0 10px #eee;
+.imageGrid {
+  display: block;
+  text-align: center;
 }
 
 /* -------------------------- FOR LOOP -------------------------- */
@@ -489,21 +490,21 @@ main img {
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-  background-color: #1d295f;
+  background-color: #000000;
 }
 
 footer {
   font-size: 0.85rem;
-  padding: 1rem 10px;
-  color: #ccc;
+  padding: 2rem 10px 1rem 10px;
+  color: #E22F65;
   text-align: center;
   line-height: 150%;
 }
 footer a {
-  color: #ccc;
+  color: #E22F65;
 }
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 43rem) {
   /* NAVIGATION STUFF GOES HERE  */
   #primaryNav button {
     display: none;
@@ -521,10 +522,15 @@ footer a {
   }
   #primaryNav ul li a, #primaryNav ul.open li a {
     padding: 0.4rem 1rem;
+    background-color: #000000;
+  }
+  #primaryNav ul li.active a, #primaryNav ul.open li.active a {
+    color: #D029DA;
+    background-color: #000000;
   }
   #primaryNav ul a:hover, #primaryNav ul.open a:hover {
-    -webkit-text-decoration: underline 4px #3990c3;
-            text-decoration: underline 4px #3990c3;
+    -webkit-text-decoration: underline 4px #D029DA;
+            text-decoration: underline 4px #D029DA;
   }
   /* -------------------------- FOR LOOP -------------------------- */
   .medium-1 {
@@ -570,6 +576,10 @@ footer a {
     margin: auto;
   }
   /* NAVIGATION STUFF GOES HERE  */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   /* -------------------------- FOR LOOP -------------------------- */
   .large-1 {
     flex-basis: 8.3333333333%;

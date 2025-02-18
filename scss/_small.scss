@@ -14,25 +14,32 @@ html {
 
 /* --------------------------- BODY --------------------------- */
 body {
-    font-family: $defaultFont;
-    font-weight: $lightWeight;
     min-width: 320px;
+}
+
+.afacad-400 {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.afacad-700 {
+    font-family: "Afacad", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
 /* --------------------------- HEADER --------------------------- */
-#headerWrapper {border-bottom: 1px solid $greyColor;}
+#headerWrapper {background-color: $blackColor;}
 header {
-    display: grid;
-    grid-template-columns: 50px auto 44px;
+    display: flex;
+    justify-content: space-between;
     column-gap: $gutter;
     align-items: center; //vertically
-    padding: .5rem $gutter;
-    span {
-        font-size: 1.6rem;
-        font-weight: $lightWeight;
-        color: $primaryColor;
-    }
+    padding: 1.5rem $gutter;
 } // end header
 
 
@@ -41,6 +48,7 @@ header {
 #primaryNav button::before {
     content: "\2630";
     font-weight: 600;
+    color: $pinkColor;
 }
 
 #primaryNav button {
@@ -58,32 +66,30 @@ header {
     position: absolute;
     right: $gutter;
     width: 200px;
-    background-color: pink;
+    background-color: $darkGreyColor;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border: 1px solid purple;
     border-radius: 5px;
-    box-shadow: 0 0 10px #aaa;
     text-align: right;
 
     display: none;
     li a {
-        color: $primaryColor;
+        color: $pinkColor;
         display: block;
         padding: 0.75rem $gutter;
         text-decoration: none;
     }
     li.active a {
-        background-color: $secondaryColor;
-        color: lightpink;
-        font-weight: $normalWeight;
+        background-color: $purpleColor;
+        color: $blackColor;
     }
 } // end unordered
 
 #primaryNav button.open::before {
     content: "\2715";
     font-weight: 600;
+    color: $pinkColor;
 }
 
 #primaryNav ul.open {
@@ -93,10 +99,14 @@ header {
 /* --------------------------- MAIN --------------------------- */
 main {
     h1 {
-        padding: 1rem $gutter.5rem $gutter;
+        font-size: 2rem;
+    }
+    h2 {
         font-size: 1.5rem;
-        color: $secondaryColor;
-        font-weight: $lightWeight
+    }
+    h1, h2 {
+        padding: 1rem $gutter .5rem $gutter;
+        color: $blackColor;
     }
     p {
         padding: .5rem $gutter;
@@ -114,22 +124,23 @@ main img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1rem 0;
-    padding: 0 8px;
-    border: 1px solid green;
+    margin: 0.5rem 0;
 } // end row
 
 .column {
     padding: 0 8px;
     margin: 8px 0;
-    border: 1px solid purple;
 } // end column
 
-// some preset styles
-.line {border: 1px solid orange;}
-.round {border-radius: 10px;}
-.fill {background-color: lightcoral;} 
-.shadow {box-shadow: 0 0 10px #eee;}
+.colorSection {
+    background-color: $yellowColor;
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.imageGrid  {
+    display: block;
+    text-align: center;
+}
 
 /* -------------------------- FOR LOOP -------------------------- */
 @for $i from 1 through 12 {
@@ -141,14 +152,14 @@ main img {
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
-    background-color: $primaryColor
+    background-color: $blackColor;
 } // end footer wrapper
 
 footer {
     font-size: .85rem;
-    padding: 1rem $gutter;
-    color: $greyColor;
+    padding: 2rem $gutter 1rem $gutter;
+    color: $pinkColor;
     text-align: center;
     line-height: $leading;
-    a {color: $greyColor;}
+    a {color: $pinkColor;}
 }// end footer

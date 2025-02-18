@@ -5,6 +5,11 @@ header, nav, main {
 
 /* NAVIGATION STUFF GOES HERE  */
 
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 /* -------------------------- FOR LOOP -------------------------- */
 @for $i from 1 through 12 {
     $w: calc($i / 12) * 100%;
